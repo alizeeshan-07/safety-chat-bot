@@ -2,6 +2,7 @@ streamlit
 PyPDF2
 openai
 chromadb
+pysqlite3-binary
 tiktoken
 langchain
 typing-inspect==0.8.0
