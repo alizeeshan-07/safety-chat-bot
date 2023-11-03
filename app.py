@@ -7,12 +7,17 @@ from langchain import OpenAI, VectorDBQA
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains import RetrievalQA
 import PyPDF2
-
-
+from dotenv import load_dotenv
+import re
+import os
 
 # WARNING: Including API keys directly in the code is not recommended for security reasons!
 # Ideally, use environment variables or secure vaults to store sensitive information.
-openai_api_key = "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"
+
+
+load_dotenv()
+
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 def read_and_textify(files):
     text_list = []
