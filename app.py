@@ -114,7 +114,7 @@ elif uploaded_files:
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     vStore = Chroma.from_texts(documents, embeddings, metadatas=[{"source": s} for s in sources])
 
-    model_name = "gpt-4"
+    model_name = "gpt-3.5-turbo"
 
     retriever = vStore.as_retriever()
     retriever.search_kwargs = {'k': 2}
