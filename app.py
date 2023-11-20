@@ -124,7 +124,7 @@ elif uploaded_files:
     retriever = vStore.as_retriever(search_type="similarity", search_kwargs={"k":1})
 
 # create the chain to answer questions
-    rqa = RetrievalQA.from_chain_type(llm=OpenAI(model_name=model_name, openai_api_key=openai_api_key, streaming=True),
+    rqa = RetrievalQA.from_chain_type(llm=OpenAI(model_name=model_name, streaming=True),
                                   chain_type="stuff",
                                   retriever=retriever,
                                   return_source_documents=True)
