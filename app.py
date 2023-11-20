@@ -119,7 +119,7 @@ elif uploaded_files:
     retriever = vStore.as_retriever()
     retriever.search_kwargs = {'k': 2}
 
-    llm = OpenAI(model_name=model_name, openai_api_key=openai_api_key, streaming=True)
+    llm = OpenAI(model_name=model_name, streaming=True)
     model = RetrievalQAWithSourcesChain.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
     retriever = vStore.as_retriever(search_type="similarity", search_kwargs={"k":1})
 
